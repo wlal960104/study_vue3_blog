@@ -1,15 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 블로그 메인 -->
+    <div class="container mt-4">
+        <h5>vue 개발자의 블로그 입니다.</h5>
+        <p> - vue 로 만들었음 - </p>
+    </div>
+
+    <!-- 블로그 리스트 -->
+    <List :blogData="blogData[i]" v-for="(a,i) in blogData" :key="i"/>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BlogList from "@/components/BlogList.vue";
+import blogData from '@/assets/blogDatail'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+    name: 'App',
+    data() {
+        return {
+            blogData : blogData
+        }
+    },
+    components: {
+      List : BlogList,
+
   }
 }
 </script>
@@ -21,6 +60,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
