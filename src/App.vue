@@ -25,18 +25,21 @@
         </div>
     </nav>
     <!-- 블로그 메인 -->
-    <div class="container mt-4">
-        <h5>vue 개발자의 블로그 입니다.</h5>
-        <p> - vue 로 만들었음 - </p>
-    </div>
+<!--    <div class="container mt-4">-->
+<!--        <h5>vue 개발자의 블로그 입니다.</h5>-->
+<!--        <p> - vue 로 만들었음 - </p>-->
+<!--    </div>-->
+    <router-link to="/">홈페이지</router-link><br> <!-- a 태그와 비슷 -->
+    <router-link to="/list">리스트페이지</router-link>
+    <router-view :blogData="blogData"></router-view>
 
     <!-- 블로그 리스트 -->
-    <List :blogData="blogData[i]" v-for="(a,i) in blogData" :key="i"/>
+<!--    <List :blogData="blogData[i]" v-for="(a,i) in blogData" :key="i"/>-->
 
 </template>
 
 <script>
-import BlogList from "@/components/BlogList.vue";
+// import BlogList from "@/components/BlogList.vue";
 import blogData from '@/assets/blogDatail'
 
 export default {
@@ -47,7 +50,7 @@ export default {
         }
     },
     components: {
-      List : BlogList,
+      // List : BlogList,
 
   }
 }
