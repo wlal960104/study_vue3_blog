@@ -31,7 +31,10 @@
 <!--    </div>-->
     <router-link to="/">홈페이지</router-link><br> <!-- a 태그와 비슷 -->
     <router-link to="/list">리스트페이지</router-link>
-    <router-view :blogData="blogData"></router-view>
+
+    <div class="mt-4">
+        <router-view :blogData="blogData"></router-view>
+    </div>
 
     <!-- 블로그 리스트 -->
 <!--    <List :blogData="blogData[i]" v-for="(a,i) in blogData" :key="i"/>-->
